@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/10/2019 23:06:01 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="vo.Expressao" table="expressao" catalog="diciolugarcomum" optimistic-lock="version">
+        <composite-id name="id" class="vo.ExpressaoId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="palavraId" type="int">
+                <column name="palavra_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="palavra" class="vo.Palavra" update="false" insert="false" fetch="select">
+            <column name="palavra_id" not-null="true" />
+        </many-to-one>
+        <property name="expressao" type="string">
+            <column name="expressao" length="140" />
+        </property>
+    </class>
+</hibernate-mapping>
