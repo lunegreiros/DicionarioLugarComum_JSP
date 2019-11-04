@@ -20,7 +20,9 @@
     </global-forwards>
 
     <action-mappings>
-        <action input="/inserirPalavra.jsp" name="inserirPalavraActionForm" path="/inserirPalavraActionForm" scope="request" type="Bean.inserirPalavraAction"/>
+        <action input="/inserirPalavra.jsp" name="inserirPalavraActionForm" path="/inserirPalavra" scope="request" type="Action.inserirPalavraAction">
+            <forward name="success" path="/inserirPalavraOK.jsp"/>
+        </action>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     

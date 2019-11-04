@@ -3,13 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Bean;
+package Action;
 
+import Bean.inserirPalavraActionForm;
+import Util.HibernateUtil;
+import java.util.HashSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import vo.Palavra;
 
 /**
@@ -38,8 +43,15 @@ public class inserirPalavraAction extends org.apache.struts.action.Action {
 
         inserirPalavraActionForm formBean = (inserirPalavraActionForm) form;
         //criar o objeto com os parametros do bean
-        Palavra palavra = new Palavra( 0, formBean.getPalavra()  );
-
+        Palavra palavra = new Palavra( 0, formBean.getPalavra(), new HashSet(0)  );
+        
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(palavra);
+        transaction.commit();
+        session.close();
+        
+        
         return mapping.findForward(SUCCESS);
     }
 }

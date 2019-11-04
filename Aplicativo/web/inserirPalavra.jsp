@@ -14,11 +14,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
     </head>
     <body>
         <h1>Dicionario de Expressoes de Lugar-Comum</h1>
+        <h2>Inserir Palavras</h2>
         
-        <html:form action="inserirpalavra">
+        <html:form action="inserirPalavra">
             <!--tabela vem aqui-->
             <table border="0" cellspacing="5" cellpadding="2">
                 <tbody>
