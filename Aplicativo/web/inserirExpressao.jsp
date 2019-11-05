@@ -1,6 +1,6 @@
 <%-- 
-    Document   : inserirPalavra
-    Created on : 23/10/2019, 13:10:41
+    Document   : inserirExpressao
+    Created on : 05/11/2019, 16:04:45
     Author     : luneg
 --%>
 
@@ -13,21 +13,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inserir Palavras</title>
-
+        <title>Inserir Expressão</title>
     </head>
     <body>
         <h1>Dicionario de Expressoes de Lugar-Comum</h1>
-        <h2>Inserir Palavras</h2>
+        <h2>Inserir Expressões</h2>
 
-        <html:form action="inserirPalavra">
+        <html:form action="inserirExpressao">
             <!--tabela vem aqui-->
             <table border="0" cellspacing="5" cellpadding="2">
                 <tbody>
                     <tr>
-                        <td>Palavra: </td>
+                        <td>Expressao: </td>
                         <!--"name" chama o bean inserirPalavraActionForm-->
                         <!--"property" associa-se c/ o VO/bean no campo nome-->
+                        <td><html:text name="inserirExpressaoActionForm" property="expressao"/></td>
+                    </tr>
+                    <tr>
+                        <td>Palavra Associada: </td>
                         <td><html:text name="inserirPalavraActionForm" property="palavra"/></td>
                     </tr>
                     <tr>
@@ -39,8 +42,9 @@
         </html:form>
         <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
         <hr>
-        <html:form action="inserirExpressao">
-            <html:submit value="Inserir Expressões"/>
+        <html:form action="inserirPalavra">
+            <html:submit value="Inserir Palavras"/>
         </html:form>
+
     </body>
 </html>
