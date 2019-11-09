@@ -1,5 +1,5 @@
 package vo;
-// Generated 18/10/2019 23:06:00 by Hibernate Tools 4.3.1
+// Generated 09/11/2019 10:17:12 by Hibernate Tools 4.3.1
 
 
 
@@ -9,7 +9,7 @@ package vo;
 public class Expressao  implements java.io.Serializable {
 
 
-     private ExpressaoId id;
+     private Integer id;
      private Palavra palavra;
      private String expressao;
 
@@ -17,21 +17,25 @@ public class Expressao  implements java.io.Serializable {
     }
 
 	
-    public Expressao(ExpressaoId id, Palavra palavra) {
-        this.id = id;
+    public Expressao(Palavra palavra) {
         this.palavra = palavra;
     }
-    public Expressao(ExpressaoId id, Palavra palavra, String expressao) {
-       this.id = id;
+    public Expressao(Palavra palavra, String expressao) {
        this.palavra = palavra;
        this.expressao = expressao;
     }
+    
+    public Expressao(int id, Palavra palavra, String expressao) {
+       this.palavra = palavra;
+       this.expressao = expressao;
+       this.id = id;
+    }
    
-    public ExpressaoId getId() {
+    public Integer getId() {
         return this.id;
     }
     
-    public void setId(ExpressaoId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public Palavra getPalavra() {

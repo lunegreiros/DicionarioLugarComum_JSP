@@ -23,9 +23,9 @@
         <br>
         <!-- colocar aqui a lista de resultados -->
         <hr>
-        <html:form action="inserirPalavra">
-            <html:submit value="Gerenciar Dicionário"/>
-        </html:form>
+        <form action="inserirPalavra.jsp">
+            <button type="submit">Gerenciar Dicionário</button>
+        </form>
 
     </body>
 </html>

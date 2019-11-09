@@ -10,21 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
-import vo.Palavra;
 
 /**
  *
  * @author luneg
  */
-public class inserirExpressaoActionForm extends org.apache.struts.action.ActionForm {
-
-    private Palavra palavra;
-    private String expressao;
-
+public class pesquisaActionForm extends org.apache.struts.action.ActionForm {
+    
+    private String palavra;
+    
+    
     /**
      *
      */
-    public inserirExpressaoActionForm() {
+    public pesquisaActionForm() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,26 +37,18 @@ public class inserirExpressaoActionForm extends org.apache.struts.action.ActionF
      */
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
-        if (getExpressao()== null || getExpressao().length() < 1) {
-            errors.add("expressao", new ActionMessage("error.expressao.required"));
+        if (getPalavra() == null || getPalavra().length() < 1) {
+            errors.add("palavra", new ActionMessage("error.palavra.required"));
             // TODO: add 'error.name.required' key to your resources
         }
         return errors;
     }
 
-    public Palavra getPalavra() {
+    public String getPalavra() {
         return palavra;
     }
 
-    public void setPalavra(Palavra palavra) {
+    public void setPalavra(String palavra) {
         this.palavra = palavra;
-    }
-
-    public String getExpressao() {
-        return expressao;
-    }
-
-    public void setExpressao(String expressao) {
-        this.expressao = expressao;
     }
 }

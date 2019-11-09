@@ -19,21 +19,22 @@
         <h1>Palavra inserida!</h1>
         <!-- corrigir essa listagem do nome da palavra inserida -->
         <h2>Palavra: <bean:write name="inserirPalavraActionForm" property="palavra"/></h2>
-        
+
         <!-- opcao para nova pesquisa -->
-    <html:form action="index">
-        <html:submit value="Nova Pesquisa"/>
-    </html:form>
+        <form action="index.jsp">
+            <button type="submit">Voltar ao Dicionário</button>
+        </form>
 
         <br>
 
         <hr>
         <!-- opcao para inserir palavras e expressoes -->
-    <html:form action="inserirPalavra">
-        <html:submit value="Inserir Palavras"/>
-    </html:form>
-    <html:form action="inserirExpressao">
-        <html:submit value="Inserir Expressões"/>
-    </html:form>
-</body>
+
+        <form action="inserirPalavra.jsp">
+            <button type="submit">Novas Palavras</button>
+        </form>
+        <form action="inserirExpressao.jsp">
+            <button type="submit">Novas Expressões</button>
+        </form>
+    </body>
 </html>

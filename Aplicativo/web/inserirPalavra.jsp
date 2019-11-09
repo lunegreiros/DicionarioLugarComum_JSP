@@ -39,8 +39,8 @@
         </html:form>
         <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
         <hr>
-        <html:form action="inserirExpressao">
-            <html:submit value="Inserir Expressões"/>
-        </html:form>
+        <form action="inserirExpressao.jsp">
+            <button type="submit">Inserir Expressões</button>
+        </form>
     </body>
 </html>

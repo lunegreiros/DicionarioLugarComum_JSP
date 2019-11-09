@@ -5,25 +5,26 @@
  */
 package Action;
 
-import Bean.inserirExpressaoActionForm;
 import Util.HibernateUtil;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import vo.Expressao;
+import org.hibernate.Hibernate;
+import vo.Palavra;
 
 /**
  *
  * @author luneg
  */
-public class inserirExpressaoAction extends org.apache.struts.action.Action {
+public class listarPalavraAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
+    
+    private List<Palavra> palavras;
 
     /**
      * This is the action called from the Struts framework.
@@ -40,16 +41,16 @@ public class inserirExpressaoAction extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        inserirExpressaoActionForm formBean = (inserirExpressaoActionForm) form;
-        
-        Expressao expressao = new Expressao(0, formBean.getPalavra(), formBean.getExpressao());
-        
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(expressao);
-        transaction.commit();
-        session.close();
-        
         return mapping.findForward(SUCCESS);
+    }
+
+    public List<Palavra> getPalavras() throws Exception{
+// preciso de um retrieve para popular essa lista 'palavras'        
+//palavras = 
+        return palavras;
+    }
+
+    public void setPalavras(List<Palavra> palavras) {
+        this.palavras = palavras;
     }
 }

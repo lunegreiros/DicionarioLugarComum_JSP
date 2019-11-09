@@ -31,7 +31,7 @@
                     </tr>
                     <tr>
                         <td>Palavra Associada: </td>
-                        <td><html:text name="inserirPalavraActionForm" property="palavra"/></td>
+                        <td>"colocar indice de palavra associada"</td>
                     </tr>
                     <tr>
                         <td colspan="2" ><html:submit value="Inserir"/></td>
@@ -42,9 +42,9 @@
         </html:form>
         <html:errors/> <!-- tratamento de erro - feito em arquivo separado -->
         <hr>
-        <html:form action="inserirPalavra">
-            <html:submit value="Inserir Palavras"/>
-        </html:form>
+        <form action="inserirPalavra.jsp">
+            <button type="submit">Inserir Palavra</button>
+        </form>
 
     </body>
 </html>

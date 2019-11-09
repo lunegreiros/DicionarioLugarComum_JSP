@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="pesquisaActionForm" type="Bean.pesquisaActionForm"/>
         <form-bean name="inserirExpressaoActionForm" type="Bean.inserirExpressaoActionForm"/>
         <form-bean name="inserirPalavraActionForm" type="Bean.inserirPalavraActionForm"/>
     
@@ -27,6 +28,7 @@
         <action input="/inserirExpressao.jsp" name="inserirExpressaoActionForm" path="/inserirExpressao" scope="request" type="Action.inserirExpressaoAction">
             <forward name="success" path="/inserirExpressaoOK.jsp"/>
         </action>
+        <action input="/listarPalavra.jsp" name="inserirExpressaoActionForm" path="/listarPalavra" scope="request" type="Action.listarPalavraAction" validate="false"/>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     
